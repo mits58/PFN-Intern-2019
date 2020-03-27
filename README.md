@@ -1,9 +1,9 @@
-# Preferred Networks Summer Internship Coding Tasks on Machine Learnings
-Preferred Networksさんの2019年インターンシップコーディング課題（機械学習）の解答例です．
-問題は[こちら](https://research.preferred.jp/2019/06/internship-coding-task-2019/)
+# Preferred Networks Summer Internship Coding Tasks on Machine Learning
+Preferred Networks（PFN）さんの2019年インターンシップコーディング課題（機械学習）の解答例です．
+問題は[こちら](https://research.preferred.jp/2019/06/internship-coding-task-2019/)です。
 
 ## 課題概要
-課題を通しGNNをフルスクラッチで実装し，実データで学習させてみようといったものでした． 
+課題を通しGNNをフルスクラッチで実装し，実データで学習させてみようといったものでした．
 
 課題1では，各頂点に特徴ベクトルが配置されたグラフに対する，集約（Aggregation）という演算の実装を行い，グラフ全体の特徴ベクトルを計算，
 それを元に課題2では損失を計算することで，数値微分を行い各パラメータを変更していくGNNを作成するという流れになっています．
