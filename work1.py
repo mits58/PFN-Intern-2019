@@ -2,12 +2,12 @@
 import numpy as np
 
 
-''' 使用する関数の定義 '''
+# 使用する関数の定義
 def ReLU(x):
     return np.maximum(0, x)
 
 
-'''　Graphクラス '''
+# Graphクラス
 class Graph:
     # コンストラクタ : 隣接行列形式のデータを引数として取る
     def __init__(self, _A):
@@ -17,9 +17,9 @@ class Graph:
 
     # 引数で与えられたパラメータWのもと集約を行うメソッド
     def Aggregate(self, W):
-        D = W.shape[0] # パラメータの次元
-        F = np.zeros((D, self.V)) # 各頂点の特徴ベクトルを横に並べたD×Vのゼロ行列を定義
-        F[0] = 1 # 各頂点の特徴ベクトルの最初の要素を1に初期化
+        D = W.shape[0]  # パラメータの次元
+        F = np.zeros((D, self.V))   # 各頂点の特徴ベクトルを横に並べたD×Vのゼロ行列を定義
+        F[0] = 1    # 各頂点の特徴ベクトルの最初の要素を1に初期化
 
         for i in range(self.T):
             F = ReLU(W.dot(F.dot(self.A.T)))
@@ -36,10 +36,10 @@ if __name__ == "__main__":
                   [0, 1, 0, 1],
                   [0, 1, 1, 0]])
     G = Graph(A)
-    W1 = np.ones((8, 8)) # 8次元の全ての要素が1の正方行列
-    W2 = np.triu(np.ones((8, 8))) # 上記の行列を上三角行列に変換した行列
-    Vec1 = G.Aggregate(W1) # W1に対応する特徴ベクトル
-    Vec2 = G.Aggregate(W2) # W2に対応する特徴ベクトル
+    W1 = np.ones((8, 8))    # 8次元の全ての要素が1の正方行列
+    W2 = np.triu(np.ones((8, 8)))   # 上記の行列を上三角行列に変換した行列
+    Vec1 = G.Aggregate(W1)  # W1に対応する特徴ベクトル
+    Vec2 = G.Aggregate(W2)  # W2に対応する特徴ベクトル
     F0 = np.zeros((8, 4))
     F0[0] = 1
     print("Test 1")
